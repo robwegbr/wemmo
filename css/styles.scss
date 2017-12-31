@@ -39,6 +39,11 @@ html, body {
     z-index:0;    
 }
 
+a:link { color: $primary; }
+a:visited { color: $primary; }
+a:hover { color: $primary; }
+a:active { color: $primary; }
+
 .blok1 {
     height: 100%;
     background-image: url('/img/fullsizepic.png');

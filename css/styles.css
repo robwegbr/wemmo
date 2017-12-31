@@ -14,6 +14,18 @@ html, body {
   width: 100%;
   z-index: 0; }
 
+a:link {
+  color: #a8009a; }
+
+a:visited {
+  color: #a8009a; }
+
+a:hover {
+  color: #a8009a; }
+
+a:active {
+  color: #a8009a; }
+
 .blok1 {
   height: 100%;
   background-image: url("/img/fullsizepic.png");
