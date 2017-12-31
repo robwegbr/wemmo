@@ -1,0 +1,45 @@
+{
+  "name": "wemmo",
+  "version": "1.0.0",
+  "description": "Wemmo",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run watch:all",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server",
+    "scss": "node-sass -o css/ css/",
+    "watch:scss": "onchange 'css/*.scss' -- npm run scss",
+    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'"    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robwegbr/wemmo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robwegbr/wemmo/issues"
+  },
+  "homepage": "https://github.com/robwegbr/wemmo#readme",
+  "devDependencies": {
+    "browser-sync": "^2.23.1",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-flatmap": "^1.0.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-rev": "^8.1.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-usemin": "^0.3.28",
+    "lite-server": "^2.3.0",
+    "node-sass": "^4.7.2",
+    "onchange": "^3.3.0",
+    "parallelshell": "^3.0.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "font-awesome": "^4.7.0"
+  }
+}

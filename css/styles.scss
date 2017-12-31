@@ -1,0 +1,116 @@
+$primary: #a8009a;
+$greyish: #f9f9f9;
+$eq: #ffcc99;
+$fi: #cfe3fc;
+$in: #dbc1ff;
+$grey: #f1f1f1;
+$darkgrey: #585858;
+$sdarkgrey: #aaa;
+
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+$xs: 0px;
+
+@mixin zero-margin($pad-up-dn, $pad-left-right) {
+	margin:0px auto;
+	padding: $pad-up-dn $pad-left-right;
+}
+
+@media (max-width: ($xs)) {
+    .container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: ($sm)) {
+    .container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+html, body {
+    font-family: "Assistant", sans-serif;    
+    height: 100%;
+    width: 100%;
+    z-index:0;    
+}
+
+.blok1 {
+    height: 100%;
+    background-image: url('/img/fullsizepic.png');
+    background-position: center center;
+    background-size: cover; 
+}
+
+.home-text{
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.home-head {
+  font-size: 20px;
+  line-height: 26px;
+  @media (min-width: $sm) {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+.row-header{
+    @include zero-margin(0px,0px);
+}
+
+.row-content { 
+    padding-top: 50px; 
+    padding-bottom: 50px;
+    line-height: 2.0em;
+    H1 {
+        text-align: center;
+        font-size: 56px;
+        padding-top: 8px;
+        padding-bottom: 20px;
+    }
+    P, LI {
+        font-size: 18px;
+    }
+}
+.row-content-sm { padding-top: 30px; padding-bottom: 30px; }
+
+.primary {
+    color: $primary;
+}
+
+.footer{
+    background-color: $greyish;
+    @include zero-margin(20px, 0px);
+}
+
+.greyish{
+    background-color: $greyish;
+}
+
+.navbar-inverse {
+    background-color: transparent;
+}
+
+.thead-inverse TH {
+    background-color: $darkgrey;
+}
+
+
+strong.EQ, td.EQ { background-color: $eq }
+strong.FI, td.FI { background-color: $fi }
+strong.IN, td.IN { background-color: $in }
+strong.grey, TD.grey { background-color: $grey }
+strong.darkgrey, TD.darkgrey, TR.darkgrey TD, TR.sdarkgrey TD.darkgrey {background-color: $darkgrey; color: #fff;}
+strong.sdarkgrey, TD.sdarkgrey, TR.sdarkgrey TD {background-color: $sdarkgrey; color: #fff;}
+strong.good { background-color: #589c18; color: #ffffff; }
+strong.notgood { background-color: #c60f13; color: #ffffff; }
