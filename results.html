@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap-social.css">
+    <link rel="stylesheet" href="css/styles.css">    
+    <!-- endbuild -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant:300">    
+    <title>Wemmo - see results</title>
+</head>
+<body>
+    <nav class="navbar navbar-toggleable-sm navbar-default">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right custom-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mb-0" href="index.html">Wemmo.nl</a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ml-3"><a class="nav-link" href="index.html">How it works</a></li>
+                    <li class="nav-item ml-3"><a class="nav-link" href="build.html">Build your own</a></li>
+                    <li class="nav-item ml-3"><a class="nav-link active" href="results.html">See results</a></li>        
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container row-content">
+        <div class="row">
+            <div class="col-12">
+                <h1>View Results</h1>
+                <p>The following charts have been created using Python (matplotlib) with data until the end of 2017. Data is derived from Yahoo finance, which held data back to 29-March 2016 for all of the underlying ETFs.</p>
+            </div>
+        </div>
+    
+        <div class="row justify-content-center row-content-sm">
+            <div class="col-12 col-md-10">    
+                <h3 class="text-center">Asset Allocation per portfolio</h3>
+                <p>The following chart presents a visual representation of the asset subcategory allocation per risk-profile as described in <a href="index.html">how it works</a>:</a></p>
+                <img src="img/chart_allocation_portfolios.png" class="img-fluid">
+            </div>
+        </div>
+        <div class="row justify-content-center row-content-sm">
+            <div class="col-12 col-md-10">    
+                <h3 class="text-center">% Return per risk profile</h3>
+                <p>The following chart shows the performance over time for the various risk profiles. The start date is 29-March 2016 (index = 100) and end date is 31-dec 2017, the chart shows weighted performance assuming a constant rebalancing of the portfolio:</p>
+                <img src="img/chart_performance_portfolios.png" class="img-fluid">                
+            </div>
+        </div>
+        <div class="row justify-content-center row-content-sm">
+            <div class="col-12 col-md-10">    
+                <h3 class="text-center">Average Risk / Return per risk profile</h3>        
+                <p>The following chart shows the average daily risk (standard deviation) vs. average daily return and plots the different risk profiles for the given timeframe:</p>
+                <img src="img/chart_riskreward_portfolios.png" class="img-fluid">
+            </div>
+        </div>
+        <div class="row justify-content-center row-content-sm">
+            <div class="col-12 col-md-10">    
+                <h3>Sharpe Ratio per risk profile</h3>
+                <p>The following chart shows the sharpe ratio for each of the risk profiles and is therefore a different way of presenting the risk/return performance for each portfolio:</p>
+                <img src="img/chart_sharpe_portfolios.png" class="img-fluid">
+            </div>
+        </div>
+        <div class="row justify-content-center row-content-sm">
+            <div class="col-12 col-md-10">    
+                <h3>Average Risk / Return per asset</h3>
+                <p>The following chart shows the average risk (standard deviation) and average return but does it per asset class subcategory (ie. ETF) over the given timeperiod:</p>
+                <img src="img/chart_riskreward_assets.png" class="img-fluid">
+            </div>
+        </div>
+        <div class="row justify-content-center row-content-sm">
+            <div class="col-12 col-md-10">    
+                <h3>Sharpe Ratio per asset</h3>
+                <p>The following chart shows the sharpe ratio for each of the assets (ETFs) as an average of their performance between March-2016 and Dec-2017</p>
+                <img src="img/chart_sharpe_assets.png" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <!-- build:js js/main.js -->    
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/tether/dist/js/tether.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
+
+  </body>
+</html>

@@ -7,6 +7,12 @@ $grey: #f1f1f1;
 $darkgrey: #585858;
 $sdarkgrey: #aaa;
 
+$profilea: #b8382a; 
+$profilesa: #ae6a85;
+$profilen: #a8b0ee;
+$profilesd: #89a086;
+$profiled: #6a941f;
+
 $xl: 1200px;
 $lg: 992px;
 $md: 768px;
@@ -33,7 +39,7 @@ $xs: 0px;
 }
 
 html, body {
-    font-family: "Assistant", sans-serif;    
+    font-family: "Assistant", "Helvetica", sans-serif;    
     height: 100%;
     width: 100%;
     z-index:0;    
@@ -58,6 +64,15 @@ a:active { color: $primary; }
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    z-index: 0;
+}
+
+@media (max-width: $md) {
+    .navbar-home{
+        background-color:rgba(0,0,0,0.8);
+        z-index: 3;
+        position: relative;
+    }
 }
 
 .home-head {
@@ -87,6 +102,8 @@ a:active { color: $primary; }
         font-size: 18px;
     }
 }
+
+.quote { line-height: 2rem; }
 .row-content-sm { padding-top: 30px; padding-bottom: 30px; }
 
 .primary {
@@ -106,16 +123,64 @@ a:active { color: $primary; }
     background-color: transparent;
 }
 
+.custom-toggler.navbar-toggler {
+    border-color: $primary;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg 
+    viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath 
+    stroke='rgba(168,0,154, 0.7)' stroke-width='2' stroke-linecap='round' 
+    stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
 .thead-inverse TH {
     background-color: $darkgrey;
 }
 
-
+.primary-row { 
+    background-color: #fff; 
+    color: $primary;
+    a:link { color: $primary; }
+    a:visited { color: $primary; }
+    a:hover { background-color: $primary; color: #fff; }
+    a:active { color: $primary; }
+}
 strong.EQ, td.EQ { background-color: $eq }
 strong.FI, td.FI { background-color: $fi }
 strong.IN, td.IN { background-color: $in }
-strong.grey, TD.grey { background-color: $grey }
+strong.GREY, TD.GREY { background-color: $grey }
 strong.darkgrey, TD.darkgrey, TR.darkgrey TD, TR.sdarkgrey TD.darkgrey {background-color: $darkgrey; color: #fff;}
 strong.sdarkgrey, TD.sdarkgrey, TR.sdarkgrey TD {background-color: $sdarkgrey; color: #fff;}
 strong.good { background-color: #589c18; color: #ffffff; }
 strong.notgood { background-color: #c60f13; color: #ffffff; }
+
+.btn-select-risk {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 2px;
+    padding-right: 2px;         
+    color: #fff;    
+    line-height: 1.8em;
+    cursor: pointer;    
+    @media (max-width: $md) {
+        height: 92px;
+    }
+    @media (max-width: $sm) {
+        font-size: 12px;
+    }
+}
+
+.table-mini-mini {
+    @media (max-width: $sm) {
+        font-size: 12px;
+        line-height: 1.5rem;
+    }
+}
+
+.btn-a { background-color: $profilea; }
+.btn-sa { background-color: $profilesa; }
+.btn-n { background-color: $profilen; }
+.btn-sd { background-color: $profilesd; }
+.btn-d { background-color: $profiled; }
+

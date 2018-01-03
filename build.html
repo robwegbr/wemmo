@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap-social.css">
+    <link rel="stylesheet" href="css/styles.css">    
+    <!-- endbuild -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant:300">    
+    <title>Wemmo - see results</title>
+</head>
+<body>
+    <nav class="navbar navbar-toggleable-sm navbar-default">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right custom-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mb-0" href="index.html">Wemmo.nl</a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ml-3"><a class="nav-link" href="index.html">How it works</a></li>
+                    <li class="nav-item ml-3"><a class="nav-link active" href="build.html">Build your own</a></li>
+                    <li class="nav-item ml-3"><a class="nav-link" href="results.html">See results</a></li>        
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container row-content">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10">
+                <h1>Build your own</h1>
+                <p>Use this webform to build your own designated investment portfolio based on the selected risk profile. Based on your selection, the allocation for each of the asset subcategories will be presented:</p>
+            </div>
+            <div class="col-12 col-xl-10">
+                <form>
+                    <div class="form-group row no-gutters">
+                        <label for="amount" class="col-10 offset-1 col-form-label">Amount to be invested</label>
+                        <div class="col-4 offset-1">
+                            <select class="form-control" id="ccy" name="ccy">
+                                <option name="eur">EUR</option>
+                                <option name="usd">USD</option>
+                            </select>                            
+                        </div>
+                        <div class="col-6 pl-3">
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="amount" name="amount"
+                                    placeholder="Amount">
+                                <div class="input-group-addon">.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row no-gutters">
+                        <label for="riskprofile" class="col-10 offset-1 col-form-label">Risk profile</label>
+                        <div class="col-2 offset-1 pr-1 text-center">
+                            <label class="radio-inline btn-select-risk btn-d btn-block btn-sm">
+                                <input type="radio" name="risk" value="d"><br/>Defensive
+                            </label>
+                        </div>
+                        <div class="col-2 text-center pr-1">
+                            <label class="radio-inline btn-select-risk btn-sd btn-block btn-sm">
+                                <input type="radio" name="risk" value="sd"><br/>Semi-Defensive
+                            </label>
+                        </div>
+                        <div class="col-2 text-center pr-1">
+                            <label class="radio-inline btn-select-risk btn-n btn-block btn-sm">
+                                <input type="radio" name="risk" value="n" checked><br/>Neutral
+                            </label>
+                        </div>
+                        <div class="col-2 text-center pr-1">
+                            <label class="radio-inline btn-select-risk btn-sa btn-block btn-sm">
+                                <input type="radio" name="risk" value="sa"><br/>Semi-Aggresive
+                            </label>
+                        </div>
+                        <div class="col-2 text-center">
+                            <label class="radio-inline btn-select-risk btn-a btn-block btn-sm">
+                                <input type="radio" name="risk" value="a"><br/>Aggressive
+                            </label>
+                        </div>  
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-10 offset-1">
+                            <button type="button" class="btn btn-primary btn-block" onclick="executeForm();" style="cursor: pointer;">Submit and view allocation</button>
+                            <div id="output" class="mt-5"></div>
+                        </div>
+                    </div>
+                </form>            
+            </div>
+        </div>
+    </div>
+
+  
+
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <!-- build:js js/main.js -->    
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/tether/dist/js/tether.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
+
+    <script>
+        function executeForm(){
+            var output = document.getElementById('output');
+            if ($("#ccy").val() === 'EUR'){
+                var ccy = '&euro;';
+            }
+            else {
+                var ccy = '$';
+            }
+                
+            var amount = $("#amount").val();
+            var radios = document.getElementsByName('risk');
+            for (var i = 0, length = radios.length; i < length; i++){
+                if (radios[i].checked){
+                    var risk = radios[i].value;
+                    break;
+                }
+            }
+            if(risk === "a"){
+                var eq_em = amount * 0.25;
+                var eq_us = amount * 0.1565;
+                var eq_eur = amount * 0.1135;
+                var eq_pac = amount * 0.25;
+                var fi_em = amount * 0.05;
+                var fi_us = amount * 0.05;
+                var fi_eur = amount * 0.05;
+                var in_reu = amount * 0.02;
+                var in_reo = amount * 0.02;
+                var in_ilb = amount * 0.02;
+                var in_com = amount * 0.02;
+            }
+            else if(risk === "sa"){
+                var eq_em = amount * 0.25;
+                var eq_us = amount * 0.1027;
+                var eq_eur = amount * 0.05;
+                var eq_pac = amount * 0.1673;
+                var fi_em = amount * 0.25;
+                var fi_us = amount * 0.05;
+                var fi_eur = amount * 0.05;
+                var in_reu = amount * 0.02;
+                var in_reo = amount * 0.02;
+                var in_ilb = amount * 0.02;
+                var in_com = amount * 0.02;
+            }
+            else if(risk === "n"){
+                var eq_em = amount * 0.05;
+                var eq_us = amount * 0.25;
+                var eq_eur = amount * 0.1198;
+                var eq_pac = amount * 0.1371;
+                var fi_em = amount * 0.25;
+                var fi_us = amount * 0.05;
+                var fi_eur = amount * 0.05;
+                var in_reu = amount * 0.02;
+                var in_reo = amount * 0.02;
+                var in_ilb = amount * 0.02;
+                var in_com = amount * 0.033;
+            }
+            else if(risk === "sd"){
+                var eq_em = amount * 0.05;
+                var eq_us = amount * 0.1754;
+                var eq_eur = amount * 0.05;
+                var eq_pac = amount * 0.05;
+                var fi_em = amount * 0.25;
+                var fi_us = amount * 0.1946;
+                var fi_eur = amount * 0.05;
+                var in_reu = amount * 0.02;
+                var in_reo = amount * 0.02;
+                var in_ilb = amount * 0.12;
+                var in_com = amount * 0.02;
+            }
+            else if(risk === "d"){
+                var eq_em = amount * 0.05;
+                var eq_us = amount * 0.0817;
+                var eq_eur = amount * 0.05;
+                var eq_pac = amount * 0.05;
+                var fi_em = amount * 0.25;
+                var fi_us = amount * 0.25;
+                var fi_eur = amount * 0.0883;
+                var in_reu = amount * 0.02;
+                var in_reo = amount * 0.02;
+                var in_ilb = amount * 0.12;
+                var in_com = amount * 0.02;
+            }
+
+            document.getElementById("output").innerHTML = `
+                    <table class="table table-striped table-hover table-mini-mini">
+                        <thead class="thead-inverse">
+                        <tr>
+                        <th>Asset</th>
+                        <th>Symbol</th>
+                        <th>ETF</th>
+                        <th>Amount</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="EQ">EQ-EM</td>
+                                <td>VWO</td>
+                                <td>Vanguard FTSE Emerging Markets ETF</td>
+                                <td>`
+                                + ccy + ' ' + numberWithCommas(eq_em.toFixed(2)) +
+                                `</td>
+                            </tr>
+                            <tr>
+                                <td class="EQ">EQ-US</td>
+                                <td>VTI</td>
+                                <td>Vanguard Total Stock Market ETF</td>
+                                <td>`
+                                + ccy + ' ' + numberWithCommas(eq_us.toFixed(2)) +
+                                `</td>
+                            </tr>
+                            <tr>
+                                <td class="EQ">EQ-EUR</td>
+                                <td>VGK</td>
+                                <td>Vanguard FTSE Europe ETF</td>
+                                <td>`
+                                + ccy + ' ' + numberWithCommas(eq_eur.toFixed(2)) +
+                                `</td>
+                            </tr>
+                            <tr>
+                                <td class="EQ">EQ-PAC</td>
+                                <td>VPL</td>
+                                <td>Vanguard FTSE Pacific</td>
+                                <td>`
+                                + ccy + ' ' + numberWithCommas(eq_pac.toFixed(2)) +
+                                `</td>
+                            </tr>
+                            <tr>
+                                <td class="FI">FI-EM</td>
+                                <td>VWOB</td>
+                                <td>Vanguard Emerging Markets Gov't Bond ETF</td>
+                                <td>`
+                                + ccy + ' ' + numberWithCommas(fi_em.toFixed(2)) +
+                                `</td>
+                            </tr>
+                            <tr>
+                                <td class="FI">FI-US</td>
+                                <td>BND</td>                                
+                                <td>Vanguard Total Bond Market ETF</td>
+                                <td>`
+                                + ccy + ' ' + numberWithCommas(fi_us.toFixed(2)) +
+                                `</td>
+                            </tr>
+                            <tr>
+                                <td class="FI">FI-EUR</td>
+                                <td>VETY</td>
+                                <td>Vanguard Europe Gov't Bond</td>
+                                <td>`
+                                + ccy + ' ' + numberWithCommas(fi_eur.toFixed(2)) +
+                                `</td>
+                            </tr>
+                            <tr>
+                                <td class="IN">IN-REU</td>
+                                <td>VNQ</td>
+                                <td>Vanguard REIT Index Fund</td>
+                                <td>`
+                                + ccy + ' ' + numberWithCommas(in_reu.toFixed(2)) +
+                                `</td>
+                            </tr>
+                            <tr>
+                                <td class="IN">IN-REO</td>
+                                <td>VNQI</td>
+                                <td>Vanguard Global ex-US Real Estate ETF</td>
+                                <td>`
+                                + ccy + ' ' + numberWithCommas(in_reo.toFixed(2)) +
+                                `</td>
+                            </tr>
+                            <tr>
+                                <td class="IN">IN-ILB</td>
+                                <td>VTIP</td>
+                                <td>Vanguard ST Inflation Protected Securities</td>
+                                <td>`
+                                + ccy + ' ' + numberWithCommas(in_ilb.toFixed(2)) +
+                                `</td>
+                            </tr>                    
+                            <tr>
+                                <td class="IN">IN-COM</td>
+                                <td>VAW</td>
+                                <td>Vanguard Materials ETF</td>
+                                <td>`
+                                + ccy + ' ' + numberWithCommas(in_com.toFixed(2)) +
+                        `       </td>
+                            </tr>
+                        </tbody>
+                    </table>`;
+        }
+
+        const numberWithCommas = (x) => {
+          return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    </script>
+
+  </body>
+</html>

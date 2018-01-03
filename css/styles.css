@@ -9,7 +9,7 @@
     margin-right: 0; } }
 
 html, body {
-  font-family: "Assistant", sans-serif;
+  font-family: "Assistant", "Helvetica", sans-serif;
   height: 100%;
   width: 100%;
   z-index: 0; }
@@ -38,7 +38,14 @@ a:active {
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white; }
+  color: white;
+  z-index: 0; }
+
+@media (max-width: 768px) {
+  .navbar-home {
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 3;
+    position: relative; } }
 
 .home-head {
   font-size: 20px;
@@ -64,6 +71,9 @@ a:active {
   .row-content P, .row-content LI {
     font-size: 18px; }
 
+.quote {
+  line-height: 2rem; }
+
 .row-content-sm {
   padding-top: 30px;
   padding-bottom: 30px; }
@@ -82,8 +92,27 @@ a:active {
 .navbar-inverse {
   background-color: transparent; }
 
+.custom-toggler.navbar-toggler {
+  border-color: #a8009a; }
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg \a     viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath \a     stroke='rgba(168,0,154, 0.7)' stroke-width='2' stroke-linecap='round' \a     stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); }
+
 .thead-inverse TH {
   background-color: #585858; }
+
+.primary-row {
+  background-color: #fff;
+  color: #a8009a; }
+  .primary-row a:link {
+    color: #a8009a; }
+  .primary-row a:visited {
+    color: #a8009a; }
+  .primary-row a:hover {
+    background-color: #a8009a;
+    color: #fff; }
+  .primary-row a:active {
+    color: #a8009a; }
 
 strong.EQ, td.EQ {
   background-color: #ffcc99; }
@@ -94,7 +123,7 @@ strong.FI, td.FI {
 strong.IN, td.IN {
   background-color: #dbc1ff; }
 
-strong.grey, TD.grey {
+strong.GREY, TD.GREY {
   background-color: #f1f1f1; }
 
 strong.darkgrey, TD.darkgrey, TR.darkgrey TD, TR.sdarkgrey TD.darkgrey {
@@ -112,3 +141,38 @@ strong.good {
 strong.notgood {
   background-color: #c60f13;
   color: #ffffff; }
+
+.btn-select-risk {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 2px;
+  padding-right: 2px;
+  color: #fff;
+  line-height: 1.8em;
+  cursor: pointer; }
+  @media (max-width: 768px) {
+    .btn-select-risk {
+      height: 92px; } }
+  @media (max-width: 576px) {
+    .btn-select-risk {
+      font-size: 12px; } }
+
+@media (max-width: 576px) {
+  .table-mini-mini {
+    font-size: 12px;
+    line-height: 1.5rem; } }
+
+.btn-a {
+  background-color: #b8382a; }
+
+.btn-sa {
+  background-color: #ae6a85; }
+
+.btn-n {
+  background-color: #a8b0ee; }
+
+.btn-sd {
+  background-color: #89a086; }
+
+.btn-d {
+  background-color: #6a941f; }
